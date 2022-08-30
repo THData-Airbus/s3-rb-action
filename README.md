@@ -1,4 +1,4 @@
-# GitHub Action to delete files from S3 Bucket
+# GitHub Action to delete S3 Bucket
 
 Fork of [s3-rm-action](https://github.com/vitorsgomes/s3-rm-action).
 

@@ -37,9 +37,7 @@ ${AWS_REGION}
 text
 EOF
 
-# Sync using our dedicated profile and suppress verbose messages.
-# All other flags are optional via the `args:` directive.
-
+# Remove files and bucket using our dedicated profile and suppress verbose messages.
 sh -c "aws s3 rm s3://${AWS_S3_BUCKET} --profile s3-rm-action --recursive"
 
 sh -c "aws s3 rb s3://${AWS_S3_BUCKET} --profile s3-rm-action --force"

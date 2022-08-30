@@ -39,7 +39,10 @@ EOF
 
 # Sync using our dedicated profile and suppress verbose messages.
 # All other flags are optional via the `args:` directive.
-sh -c "aws s3 rb s3://${AWS_S3_BUCKET}/ --profile s3-rm-action"
+
+sh -c "aws s3 rm s3://${AWS_S3_BUCKET} --profile s3-rm-action --recursive"
+
+sh -c "aws s3 rb s3://${AWS_S3_BUCKET} --profile s3-rm-action --force"
 
 # Clear out credentials after we're done.
 # We need to re-run `aws configure` with bogus input instead of

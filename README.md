@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Remove from S3
+    - name: Delete from S3
       uses: thdataberlin/s3-rb-action@master
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET_NAME }}

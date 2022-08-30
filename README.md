@@ -10,8 +10,6 @@ This simple action uses the [vanilla AWS CLI](https://docs.aws.amazon.com/cli/in
 
 Place in a `.yml` file such as this one in your `.github/workflows` folder. [Refer to the documentation on workflow YAML syntax here.](https://help.github.com/en/articles/workflow-syntax-for-github-actions)
 
-All [`aws s3 rm flags`](https://docs.aws.amazon.com/cli/latest/reference/s3/rm.html) are optional to allow for maximum customizability (that's a word, I promise) and must be provided by you via `args:`.
-
 ```yaml
 name: Delete branch folder
 
@@ -26,9 +24,7 @@ jobs:
     
     steps:
     - name: Remove from S3
-      uses: vitorsgomes/s3-rm-action@master
-      with:
-        args: --recursive
+      uses: thdataberlin/s3-rb-action@master
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET_NAME }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

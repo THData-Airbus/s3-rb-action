@@ -24,7 +24,7 @@ jobs:
     
     steps:
     - name: Delete from S3
-      uses: thdataberlin/s3-rb-action@master
+      uses: THData-Airbus/s3-rb-action@master
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_BUCKET_NAME }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
